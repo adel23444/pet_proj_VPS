@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  db_vps:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .envs
+
+
+volumes:
+  postgres_data:
